@@ -8,7 +8,7 @@ STARTING_X = 290
 FINAL_X = - 290
 
 
-class CarManager():
+class CarManager:
 
     def __init__(self):
         self.all_cars = []

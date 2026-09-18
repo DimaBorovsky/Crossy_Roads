@@ -9,7 +9,7 @@ screen.setup(width=600, height=600)
 screen.tracer(0)
 
 player = Player()
-car =CarManager()
+car = CarManager()
 
 screen.listen()
 screen.onkey(fun=player.up,key="Up")
@@ -22,6 +22,9 @@ while game_is_on:
     player.reset_position()
     car.create_cars()
     car.move_cars()
+    for carr in car.all_cars:
+        if carr.distance(player) < 20:
+            game_is_on = False
 
 
 screen.exitonclick()
